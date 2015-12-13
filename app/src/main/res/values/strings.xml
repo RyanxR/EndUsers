@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">EndUsers</string>
+    <string name="section_format"> %1$d</string>
+</resources>
