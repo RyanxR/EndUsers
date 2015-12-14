@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">EndUsers</string>
     <string name="CompanyInfo">This text has to be imported from the Content Provider app from Simon</string>
+    <string name="OfficeName">Delft</string>
 </resources>

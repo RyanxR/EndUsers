@@ -30,7 +30,5 @@ public class MainActivity extends TabActivity {
 
         tabHost.addTab(company); // Adding photos tab
         tabHost.addTab(offices);
-
-        String[] offices_array = {"Delft", "Den Haag"};
     }
 }
