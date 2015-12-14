@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="318dp"
+        android:layout_height="0dp"
+        android:text="@string/CompanyInfo"
+        android:id="@+id/CompanyInfo"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.6"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="Company Website"
+        android:id="@+id/CompanyWebsite"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.1"
+        android:clickable="true"
+        android:onClick="goToWebsite" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:id="@+id/Pictures"
+        android:layout_weight="0.26" >
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Button"
+                android:id="@+id/button" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Button"
+                android:id="@+id/button2" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Button"
+                android:id="@+id/button3" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Button"
+                android:id="@+id/button4" />
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+</LinearLayout>

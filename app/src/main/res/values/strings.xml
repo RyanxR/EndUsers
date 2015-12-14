@@ -1,6 +1,4 @@
 <resources>
     <string name="app_name">EndUsers</string>
-    <string name="section_format">Information about the company should be put here </string>
-    <string name="section_format2">Here will come the list of offices in ListView</string>
-    <string name="listView2">testing</string>
+    <string name="CompanyInfo">This text has to be imported from the Content Provider app from Simon</string>
 </resources>
