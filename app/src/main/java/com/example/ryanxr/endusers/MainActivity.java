@@ -1,22 +1,15 @@
 package com.example.ryanxr.endusers;
 
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -41,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        String[] offices = {"Delft", "Den Haag"};
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(getListView().getContext(), Android.R.layout.simple_list_item_1, offices);
+       // getListView().setAdapter(adapter);
+
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
@@ -53,8 +50,6 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
-
-
     }
 
     public static class PlaceholderFragment extends Fragment {
@@ -89,12 +84,38 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public static class Fragment2 extends Fragment {
+        public static Fragment2 newInstance() {
+            Fragment2 fragment = new Fragment2();
+            return fragment;
+        }
+
+        public Fragment2() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_main2, container, false);
+            TextView tv = (TextView) rootView.findViewById(R.id.section_label2);
+            tv.setText(getString(R.string.section_format2));
+            /*ClickMe.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(tv.getText().toString().contains("Hello")){
+                        tv.setText("Hi");
+                    }else tv.setText("Hello");
+                }
+            }); */
+            return rootView;
+        }
+    }
+
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
-
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
         }
@@ -103,12 +124,16 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            switch(position) {
+                case 0: return PlaceholderFragment.newInstance(position + 1);
+                case 1: return Fragment2.newInstance();
+            };
+            return null;
         }
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
+            // Show 2 total pages.
             return 2;
         }
 
@@ -116,9 +141,9 @@ public class MainActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "Company";
                 case 1:
-                    return "SECTION 2";
+                    return "Offices";
             }
             return null;
         }
