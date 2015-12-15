@@ -24,8 +24,8 @@ public class Offices extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.offices_layout);
 
-        ArrayAdapter<Office> adapter = new ArrayAdapter<Office>(this, android.R.layout.simple_list_item_1, android.R.id.text1, items);
-        final ListView officeslist = (ListView) findViewById(R.id.offices_list);
+        ArrayAdapter<Office> adapter = new ArrayAdapter<Office>(this, android.R.layout.simple_list_item_1, items);
+        ListView officeslist = (ListView) findViewById(R.id.offices_list);
         officeslist.setAdapter(adapter);
 
 
@@ -33,7 +33,7 @@ public class Offices extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Pos = position;
-                OpenOffice(officeslist);
+                OpenOffice(view);
             }
         });
     }
